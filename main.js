@@ -65,6 +65,9 @@ function getSearchResults() {
                     foodResultsDiv.appendChild(mealDiv);
                 }
             } catch (error) {
+                if (searchTerm == null) {
+                    return
+                }
                 // if no results found, throw an error and display it on screen
                 let errorBox = document.createElement('div');
                 errorBox.textContent = `No meals found with "${searchTerm}"`;
