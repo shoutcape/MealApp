@@ -1,4 +1,10 @@
 window.onload = function() {   
+
+    let backbutton = document.getElementById('backButton')
+    backbutton.onclick = function() {
+        window.location.href = '../../index.html'
+    }
+
     let id =localStorage.getItem('mealId')
     let api = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
     fetch(api)
@@ -16,12 +22,16 @@ window.onload = function() {
         // config title
         let title = meal.strMeal
         let titleH1 = document.createElement('h1')
+        let topBar = document.getElementById('topBar')
         titleH1.innerHTML = title
+        topBar.appendChild(titleH1)
+// 
+        
+        // mainContainer.appendChild(titleH1)
 
         // config left side of the container
         let leftSide = document.createElement('div')
         leftSide.classList.add('leftSide')
-        leftSide.appendChild(titleH1)
         leftSide.appendChild(image)
         mainContainer.appendChild(leftSide)
 
@@ -38,14 +48,17 @@ window.onload = function() {
                 let ingredientThumbNail = `https://www.themealdb.com/images/ingredients/${ingredient}.png`
                 let ingredientphoto = document.createElement('img')
                 let ingredientP = document.createElement('p')
+                ingredientP.classList.add('text-center')
 
                 // config ingredients
                 ingredientP.innerHTML = `${ingredient} ${measure}`
                 ingredientphoto.src = ingredientThumbNail
                 ingredientphoto.alt = ingredient
-                ingredientphoto.classList.add('ingredientPhoto')
+                ingredientphoto.classList.add('img-fluid')
+                ingredientphoto.id = 'ingredientPhoto'
                 let ingredientdiv = document.createElement('div')
-                ingredientdiv.classList.add('ingredient')
+                ingredientdiv.classList.add('img-fluid')
+                ingredientdiv.id = 'ingredient'
                 ingredientdiv.appendChild(ingredientphoto)
                 ingredientdiv.appendChild(ingredientP)
                 rightSide.appendChild(ingredientdiv)
@@ -71,8 +84,5 @@ window.onload = function() {
         textContent.appendChild(instructionH1)
         textContent.appendChild(pInstructions)
         textContent.appendChild(aYoutube)
-
-
-        
     })
 }

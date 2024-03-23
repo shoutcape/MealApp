@@ -1,36 +1,41 @@
 
-.container {
+.container-fluid {
     background-color: white;
     padding: 30px;
-    padding-top: 10px;
+    padding-top: 0px;
     border-radius: 20px;
     /* boxshadown taken rom https://getcssscan.com/css-box-shadow-examples*/
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;;
+    max-width: 1200px;
 }
-
 
 .backButton {
     display: flex;
-    border-radius: 10px;
+    border-radius: 0px 0px 10px 10px;
+    font-size: larger;
     border: none;
     margin-left: none;
     height: 30px;
     align-items: center;
     transition: 0.2s;
+    margin-left: 20px;
 }
 
 .backButton:hover {
     background-color: lightgray;
 }
 
-
 .textContent {
     margin: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .mainContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .leftSide {
@@ -39,8 +44,9 @@
     margin: 10px;
 }
 
-.leftSide h1 {
+#topBar h1 {
     padding: 10px;
+    margin-left: 10px;
     margin-bottom: 0px;
 }
 
@@ -48,52 +54,93 @@
     display: grid;
     margin-left: 30px;
     margin-right: 70px;
-    margin-bottom: 0px;
     padding: 20px;
-    padding-bottom: 0px;
+    padding-top: 0px;
+    margin-top: 10px;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 30px;
     align-content: center;
 }
 
-.ingredient {
+#ingredient {
     align-items: center;
     text-align: center;
     display: flex;
     flex-direction: column;
-    padding: 0px;
-    margin: 0px;
     justify-content: flex-end;
+    border-radius: 20px;
+    /* box shadow taken from https://getcssscan.com/css-box-shadow-examples*/
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-.ingredientPhoto{
-    width: 100px;
-    height: 100px;
+#ingredientPhoto{
+    max-width: 100px;
 }
 
 #mainPhoto {
-    width: 500px;
     height: fit-content;
     border-radius: 20px;
     margin-left: 9px;
+    padding: 3px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 @media(max-width: 1200px) {
     .content {
         display: flex;
-        justify-content: center;
         align-items: center;
+    }
+
+    .leftSide {
+        align-items: center;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    #mainPhoto {
+        width: 700px;
+        margin: 0px;
     }
     
     .mainContainer {
         flex-direction: column;
-        justify-content: center;
+    }
+
+    .rightSide {
+        margin: auto;
+        margin-top: 20px;
+    }
+}
+
+@media(max-width: 700px){
+    .content {
+        display: flex;
         align-items: center;
+    }
+
+    .leftSide {
+        align-items: center;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    #mainPhoto {
+        width: 500px;
+        margin: 0px;
+    }
+    
+    .mainContainer {
+        flex-direction: column;
+    }
+
+    .rightSide {
+        margin: auto;
+        margin-top: 20px;
     }
 }
 
 body, html {
-    height: 100%;
+    height: 110%;
     margin: 0px;
     padding: 0px;
     backdrop-filter: blur(30px);
