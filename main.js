@@ -66,7 +66,7 @@ function getSearchResults() {
                 }
             } catch (error) {
                 if (searchTerm == null) {
-                    return
+                    return;
                 }
                 // if no results found, throw an error and display it on screen
                 let errorBox = document.createElement('div');
