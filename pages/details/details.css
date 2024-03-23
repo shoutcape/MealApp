@@ -1,10 +1,106 @@
+
 .container {
-    background-color: aliceblue;
+    background-color: white;
     padding: 30px;
+    padding-top: 10px;
+    border-radius: 20px;
+    /* boxshadown taken rom https://getcssscan.com/css-box-shadow-examples*/
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;;
 }
 
 
-.img-fluid {
-    width: 300px;
-    border-radius: 30px;
+.backButton {
+    display: flex;
+    border-radius: 10px;
+    border: none;
+    margin-left: none;
+    height: 30px;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.backButton:hover {
+    background-color: lightgray;
+    
+}
+
+
+.textContent {
+    margin: 20px;
+}
+
+.mainContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftSide {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.leftSide h1 {
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+.rightSide {
+    display: grid;
+    margin-left: 30px;
+    margin-right: 70px;
+    margin-bottom: 0px;
+    padding: 20px;
+    padding-bottom: 0px;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px;
+    align-content: center;
+}
+
+.ingredient {
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    margin: 0px;
+    justify-content: flex-end;
+}
+
+.ingredientPhoto{
+    width: 100px;
+    height: 100px;
+}
+
+#mainPhoto {
+    width: 500px;
+    height: fit-content;
+    border-radius: 20px;
+    margin-left: 9px;
+}
+
+@media(max-width: 1200px) {
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .mainContainer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+body, html {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    backdrop-filter: blur(30px);
+    background-size: cover;
+}
+
+body {
+    padding: 50px;
 }

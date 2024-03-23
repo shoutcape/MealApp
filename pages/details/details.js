@@ -5,14 +5,74 @@ window.onload = function() {
     .then(response => response.json())
     .then((data) => {
         let meal = data.meals[0]
-        let div = document.createElement
-        let ingredients = []
-        console.log(meal)
-        for (let item in meal) {
-            // check that the item is strIngredient and has a value
-            if (item.includes('strIngredient') && (meal[item] !== "" || meal[item] !== null))
-            console.log(meal[item])
+        let mainContainer = document.getElementById('mainContainer')
+        let image = document.createElement('img')
+        image.src = meal.strMealThumb
+        document.body.style.backgroundImage = `url(${meal.strMealThumb})`
+        image.alt = 'picture of the meal'
+        image.id = 'mainPhoto'
+        image.classList.add('img-fluid')
+
+        // config title
+        let title = meal.strMeal
+        let titleH1 = document.createElement('h1')
+        titleH1.innerHTML = title
+
+        // config left side of the container
+        let leftSide = document.createElement('div')
+        leftSide.classList.add('leftSide')
+        leftSide.appendChild(titleH1)
+        leftSide.appendChild(image)
+        mainContainer.appendChild(leftSide)
+
+        // config right side of the container
+        let rightSide = document.createElement('div')
+        rightSide.classList.add('rightSide')
+
+        for (let i = 1; i<=20; i++) {
+            // search for the ingredient and measure
+            let ingredient = meal[`strIngredient${i}`]
+            let measure = meal[`strMeasure${i}`]
+            // check that the ingredient and measure exist to avoid false results
+            if (ingredient && ingredient !== '' && measure && measure !== '') {
+                let ingredientThumbNail = `https://www.themealdb.com/images/ingredients/${ingredient}.png`
+                let ingredientphoto = document.createElement('img')
+                let ingredientP = document.createElement('p')
+
+                // config ingredients
+                ingredientP.innerHTML = `${ingredient} ${measure}`
+                ingredientphoto.src = ingredientThumbNail
+                ingredientphoto.alt = ingredient
+                ingredientphoto.classList.add('ingredientPhoto')
+                let ingredientdiv = document.createElement('div')
+                ingredientdiv.classList.add('ingredient')
+                ingredientdiv.appendChild(ingredientphoto)
+                ingredientdiv.appendChild(ingredientP)
+                rightSide.appendChild(ingredientdiv)
+            }
+
+            mainContainer.appendChild(rightSide)
+
+
         }
-        // let ingredientUrl = `www.themealdb.com/images/ingredients/${ingredient}.png`
+
+        // config text contents
+        let textContent = document.getElementsByClassName('textContent')[0]
+        let instructionH1 = document.createElement('h1')
+        instructionH1.innerHTML = 'Instructions:'
+
+        let pInstructions = document.createElement('p')
+        let aYoutube = document.createElement('a')
+        aYoutube.innerHTML = 'Youtube tutorial'
+        aYoutube.href = meal.strYoutube
+        // change linechanges to br tags for better text format
+        let instructions = meal.strInstructions.replace(/\n/g, '<br>')
+        pInstructions.innerHTML = instructions
+        textContent.appendChild(instructionH1)
+        textContent.appendChild(pInstructions)
+        textContent.appendChild(aYoutube)
+
+
+        
     })
 }
