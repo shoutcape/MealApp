@@ -1,4 +1,3 @@
-
 /* fluid container for resonsive sizing */
 .container-fluid {
     background-color: white;
@@ -60,7 +59,6 @@
     flex-direction: column;
     margin: 10px;
 }
-
 
 /* right half of the maincontainer */
 .rightSide {

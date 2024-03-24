@@ -1,6 +1,10 @@
 /* this wraps around the content to create the white background */
 .foreGround {
-    background: radial-gradient(circle at center, white, rgba(255, 255, 255, 0.8));
+    background: radial-gradient(
+        circle at center,
+        white,
+        rgba(255, 255, 255, 0.8)
+    );
     border-radius: 20px;
     max-width: 1000px;
     margin: auto;
@@ -129,4 +133,3 @@ body {
     padding-top: 50px;
     padding: 20px;
 }
-
