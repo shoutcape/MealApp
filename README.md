@@ -57,4 +57,8 @@ This application helps users find different types of food recipes. It's built wi
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
- 
+
+## Link
+https://meal-application-project.netlify.app/
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e8d2bb83-63d0-409d-ace6-0fc62314c64d/deploy-status)](https://app.netlify.com/sites/meal-application-project/deploys)
