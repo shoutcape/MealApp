@@ -7,31 +7,59 @@ searchForm.onsubmit = function (event) {
     event.preventDefault();
 };
 
+// on search input
 searchForm.oninput = function (event) {
     event.preventDefault();
     let searchTerm = searchForm['search'].value;
     // use session storage to save the search term to the browser session
     sessionStorage.setItem('searchTerm', searchTerm);
+    sessionStorage.removeItem('category')
     getSearchResults();
+    // reset the category to default
+    categoryList.selectedIndex = 0
 };
 
+let categoryList = document.getElementById('categoryList')
+
+categoryList.onchange = function (event) {
+    event.preventDefault()
+    let selectedCategory = event.target.value
+    sessionStorage.setItem('category', selectedCategory)
+    sessionStorage.removeItem('searchTerm')
+    getSearchResults()
+}
+
 window.onload = function () {
+    getCategories();
     getSearchResults();
 };
 
 function getSearchResults() {
     // get the searchterm from sessionStorage
     let searchTerm = sessionStorage.getItem('searchTerm');
-    // set searchterm to searchbar value incase its empty
+    let category = sessionStorage.getItem('category')
+    let api = 'https://www.themealdb.com/api/json/v1/1/';
+
+    // default searchmode
+    let searchMode = 'search.php?s='
+
     searchForm['search'].value = searchTerm;
-    // if no searchTerm don't continue
-    if (searchTerm == '') {
+    // check if category is selected
+    if (category && category !== 'none') {
+        searchTerm = category
+        // category searchmode
+        searchMode = 'filter.php?c='
+    }
+    
+    // if no searchTerm or category don't continue
+    if (searchTerm == '' && (category == 'none' || !category)) {
         foodResultsDiv.innerHTML = '';
         return;
     }
 
+
     // Fetch the meals from the api with the searchTerm
-    fetch(`${api}search.php?s=${searchTerm}`)
+    fetch(`${api}${searchMode}${searchTerm}`)
         .then((response) => response.json())
         .then((data) => {
             // reset the page incase there are latest search results
@@ -74,4 +102,24 @@ function getSearchResults() {
                 foodResultsDiv.appendChild(errorBox);
             }
         });
+}
+
+// function to get the categories
+function getCategories() {
+    fetch(`${api}categories.php`)
+    .then((response) => response.json())
+    .then((data) => {
+        let categories = data.categories
+        for (let item of categories) {
+            let newOption = document.createElement('option')
+            newOption.value = item.strCategory
+            newOption.innerHTML = item.strCategory
+            categoryList.appendChild(newOption)
+        }
+        // if sessionstorage has category show it as selected on the dropdown
+        let category = sessionStorage.getItem('category')
+        if (category) {
+            categoryList.value = category
+        }
+    })
 }
