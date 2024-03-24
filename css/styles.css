@@ -48,8 +48,14 @@
     }
     .mealBox {
         width: 150px;
-        margin: 20px;
+        margin: 10px;
+        margin-bottom: 0px;
+        padding: 0px;
     }
+    .form-control {
+        margin-bottom: 10px;
+    }
+
 }
 
 .imgText {
