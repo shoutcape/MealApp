@@ -4,7 +4,7 @@ window.onload = function () {
         window.location.href = '../../index.html';
     };
 
-    let id = localStorage.getItem('mealId');
+    let id = sessionStorage.getItem('mealId');
     let api = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
     fetch(api)
         .then((response) => response.json())

@@ -10,7 +10,8 @@ searchForm.onsubmit = function (event) {
 searchForm.oninput = function (event) {
     event.preventDefault();
     let searchTerm = searchForm['search'].value;
-    localStorage.setItem('searchTerm', searchTerm);
+    // use session storage to save the search term to the browser session
+    sessionStorage.setItem('searchTerm', searchTerm);
     getSearchResults();
 };
 
@@ -19,8 +20,8 @@ window.onload = function () {
 };
 
 function getSearchResults() {
-    // get the searchterm from localstorage
-    let searchTerm = localStorage.getItem('searchTerm');
+    // get the searchterm from sessionStorage
+    let searchTerm = sessionStorage.getItem('searchTerm');
     // set searchterm to searchbar value incase its empty
     searchForm['search'].value = searchTerm;
     // if no searchTerm don't continue
@@ -57,8 +58,8 @@ function getSearchResults() {
                     // make the pictures clickable
                     mealPicture.addEventListener('click', function () {
                         console.log(meal.idMeal);
-                        // use localstorage to store the id of the selected meal
-                        localStorage.setItem('mealId', meal.idMeal);
+                        // use sessionStorage to store the id of the selected meal
+                        sessionStorage.setItem('mealId', meal.idMeal);
                         window.location.href = '/pages/details/details.html';
                     });
 

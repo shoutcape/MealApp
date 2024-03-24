@@ -29,7 +29,8 @@
 .textContent {
     margin: 20px;
     margin-top: 20px;
-    padding: 10px;
+    padding: 20px;
+    border-radius: 20px;
 
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
         rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
@@ -137,12 +138,26 @@
     }
 
     .mainContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
     }
 
     .rightSide {
-        margin: auto;
+        margin: 0px;
         margin-top: 20px;
+        padding: 0px;
+        gap: 10px;
+    }
+
+    .img-fluid {
+        width: 90px;
+    }
+
+    #ingredient {
+        justify-content: start;
+        padding-top: 6px;
     }
 }
 
@@ -156,5 +171,6 @@ html {
 }
 
 body {
-    padding: 50px;
+    padding-top: 50px;
+    padding: 20px;
 }
