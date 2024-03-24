@@ -1,4 +1,3 @@
-let api = 'https://www.themealdb.com/api/json/v1/1/';
 let searchForm = document.querySelector('#searchBox');
 let foodResultsDiv = document.getElementById('foodResults');
 
@@ -106,6 +105,7 @@ function getSearchResults() {
 
 // function to get the categories
 function getCategories() {
+    let api = 'https://www.themealdb.com/api/json/v1/1/';
     fetch(`${api}categories.php`)
     .then((response) => response.json())
     .then((data) => {
