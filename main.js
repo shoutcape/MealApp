@@ -57,7 +57,6 @@ function getSearchResults() {
 
                     // make the pictures clickable
                     mealPicture.addEventListener('click', function () {
-                        console.log(meal.idMeal);
                         // use sessionStorage to store the id of the selected meal
                         sessionStorage.setItem('mealId', meal.idMeal);
                         window.location.href = '/pages/details/details.html';

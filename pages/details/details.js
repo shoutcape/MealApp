@@ -1,3 +1,4 @@
+// on page load do function
 window.onload = function () {
     let backbutton = document.getElementById('backButton');
     backbutton.onclick = function () {

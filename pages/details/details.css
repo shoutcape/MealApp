@@ -1,3 +1,5 @@
+
+/* fluid container for resonsive sizing */
 .container-fluid {
     background-color: white;
     padding: 30px;
@@ -10,6 +12,7 @@
     max-width: 1200px;
 }
 
+/* back to search button */
 .backButton {
     display: flex;
     border-radius: 0px 0px 10px 10px;
@@ -26,6 +29,7 @@
     background-color: lightgray;
 }
 
+/* instructions section */
 .textContent {
     margin: 20px;
     margin-top: 20px;
@@ -37,23 +41,28 @@
         rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-.mainContainer {
-    display: flex;
-    justify-content: center;
-}
-
-.leftSide {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-}
-
+/* Food name */
 #topBar h1 {
     padding: 10px;
     margin-left: 10px;
     margin-bottom: 0px;
 }
 
+/*container for the mainphoto and ingredients */
+.mainContainer {
+    display: flex;
+    justify-content: center;
+}
+
+/* left half of the maincontainer */
+.leftSide {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+
+/* right half of the maincontainer */
 .rightSide {
     display: grid;
     margin-left: 30px;
@@ -66,6 +75,7 @@
     align-content: center;
 }
 
+/* ingredient sizing and aligning */
 #ingredient {
     align-items: center;
     text-align: center;
@@ -83,6 +93,7 @@
     max-width: 100px;
 }
 
+/* main photo aligning and sizing */
 #mainPhoto {
     height: fit-content;
     border-radius: 20px;
@@ -93,6 +104,7 @@
         rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
+/* media query for full desktop */
 @media (max-width: 1200px) {
     .content {
         display: flex;
@@ -120,6 +132,7 @@
     }
 }
 
+/* media query for smaller screen */
 @media (max-width: 700px) {
     .content {
         display: flex;
@@ -167,16 +180,19 @@
     }
 }
 
+/* html and body adjustments and background blur effect */
 body,
 html {
-    height: 110%;
     margin: 0px;
     padding: 0px;
     backdrop-filter: blur(30px);
     background-size: cover;
+    overflow: auto;
+    height: 100%;
 }
 
 body {
+    height: 100%;
     padding-top: 50px;
     padding: 20px;
 }

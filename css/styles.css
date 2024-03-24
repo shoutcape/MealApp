@@ -1,3 +1,15 @@
+/* this wraps around the content to create the white background */
+.foreGround {
+    background: radial-gradient(circle at center, white, rgba(255, 255, 255, 0.8));
+    border-radius: 20px;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+    min-height: 400px;
+}
+
+/* welcome header */
 .welcome {
     font-size: 50px;
     display: flex;
@@ -5,25 +17,29 @@
     margin-bottom: 20px;
 }
 
+/* description text*/
 .description {
     font-size: 15px;
     text-align: center;
 }
 
+/* searchbar */
 .input-group {
     max-width: 300px;
     display: flex;
     margin: auto;
 }
 
+/* search results */
 #foodResults {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
+/* fluid images for each result*/
 .img-fluid {
     border-radius: 30px;
     /* box shadow taken from  https://getcssscan.com/css-box-shadow-examples */
@@ -32,30 +48,32 @@
     transition: transform 0.2s;
 }
 
+/* hover effect for images*/
 .img-fluid:hover {
     transform: scale(1.05);
     cursor: pointer;
 }
 
+/* size of the meal container */
 .mealBox {
     width: 250px;
     margin: 20px;
 }
 
+/* media query for smaller screens */
 @media (max-width: 600px) {
     #foodResults {
         margin: auto;
     }
     .mealBox {
-        width: 150px;
-        margin: 10px;
+        width: 130px;
+        margin: 5px;
         margin-bottom: 0px;
         padding: 0px;
     }
     .form-control {
         margin-bottom: 10px;
     }
-
 }
 
 .imgText {
@@ -66,6 +84,20 @@
     margin-top: 15px;
 }
 
+/* body and html adjustments for background fitting and blur effect*/
+body,
 html {
-    margin-top: 70px;
+    margin: 0px;
+    padding: 0px;
+    backdrop-filter: blur(5px);
+    background-size: cover;
+    height: 100%;
+    overflow: auto;
 }
+
+body {
+    background-image: url('../../images/mainBackground.jpg');
+    padding-top: 50px;
+    padding: 20px;
+}
+
