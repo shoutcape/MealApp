@@ -11,22 +11,27 @@ This application helps users find different types of food recipes. It's built wi
 - **Meal Details**: When a user clicks on a food recipe, they are taken to a new page that displays more details about the meal, including the ingredients and instructions.
 - **Session Storage**: The app uses session storage to store the user's search history. This allows users to see their previous searches when they return to the main page.
 - **YouTube Links**: The app provides links to YouTube videos that show how to prepare the food recipes.
+- **Search by category**: Users can search for food recipes by category.
 
 ## CSS Classes
 
-- `.foreGround`: This class is used for the main container of the app. It has a radial gradient background that fades towards the edges, giving a slight see-through effect.
+## CSS Classes in Styles.css
 
-- `.welcome`: This class is used for the welcome message.
+- `.img-fluid:hover`: This class applies a hover effect to images. When the mouse pointer hovers over an image, the image scales up to 105% of its original size and the cursor changes to a pointer.
 
-- `.description`: This class is used for the description text.
+- `.mealBox`: This class sets the width and margin of the meal container. The width is set to 250px and the margin is set to 20px.
 
-- `.input-group`: This class is used for the search bar container.
+- `@media (max-width: 600px)`: This is a media query that applies different styles when the screen width is 600px or less. It adjusts the margin of `#foodResults`, and the width, margin, and padding of `.mealBox`. It also sets the margin-bottom of `.form-control` to 10px.
 
-- `#foodResults`: This class is used for the container that displays the search results.
+- `.imgText`: This class centers the text alignment of the image text.
 
-- `.img-fluid`: This class is used for the food recipe images. It includes a hover effect that enlarges the image.
+- `.mealBox p`: This class sets the top margin of the paragraph elements inside `.mealBox` to 15px.
 
-- `.mealBox`: This class is used for the individual meal boxes in the search results.
+- `#categoryList`: This class sets the left margin of the category list to 5px.
+
+- `body, html`: These selectors apply styles to the body and html elements. They set the margin and padding to 0px, apply a blur effect to the backdrop, set the background size to cover, set the height to 100%, and allow overflow.
+
+- `.body`: This selector applies additional styles to the body element. It sets the background image, adds a top padding of 50px, and a general padding of 20px.
 
 ## CSS Classes in details.css
 
@@ -48,9 +53,6 @@ This application helps users find different types of food recipes. It's built wi
 
 - `body, html`: These selectors are used to remove the default margin and padding from the `body` and `html` elements, apply a blur effect to the background, cover the background, and set the overflow to auto.
 
-## Media Queries
-
-The app uses a media query to adjust the layout for smaller screens. This makes the app more usable on smaller screens like mobile devices.
 
 ## License
 
