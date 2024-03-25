@@ -39,6 +39,7 @@ window.onload = function () {
             let rightSide = document.createElement('div');
             rightSide.classList.add('rightSide');
 
+            // create a rolling index
             for (let i = 1; i <= 20; i++) {
                 // search for the ingredient and measure
                 let ingredient = meal[`strIngredient${i}`];

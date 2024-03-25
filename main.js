@@ -75,6 +75,8 @@ function getAndShowSearchResults() {
                     // add styling classes to each element
                     mealDiv.classList.add('mealBox');
                     mealPicture.classList.add('img-fluid');
+                    // lazy loading, incase there are a lot of pictures
+                    mealPicture.loading = "lazy"
                     mealName.classList.add('imgText');
 
                     // add the information to corresponding html element
