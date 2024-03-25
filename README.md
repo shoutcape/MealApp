@@ -2,6 +2,12 @@
 
 This application helps users find different types of food recipes. It's built with HTML, CSS, and JavaScript.
 
+## Photos
+
+ <pre><img src="https://github.com/shoutcape/MealApp/blob/main/images/mainScreen.png" width="500">  <img src="https://github.com/shoutcape/MealApp/blob/main/images/detailsScreen.png" width="460"></pre>
+
+
+
 ## Features
 
 - **Welcome Screen**: The app greets users with a welcome message.
